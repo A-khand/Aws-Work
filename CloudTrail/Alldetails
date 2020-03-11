@@ -1,9 +1,4 @@
-Api-Gatway-> 
 
-get all events by source Name         https://fakt39p2qf.execute-api.us-east-1.amazonaws.com/prod/getevent?EventSource=ecs.amazonaws.com
-get event by-Id			                 	https://y9txcny2u5.execute-api.us-east-1.amazonaws.com/prod/log?EventId=6aba3ba8-d4ca-4e03-b345-c35cdff78a88
-
-Lambda-Functions 
     get all events by source Name    arn:aws:lambda:us-east-1:130159455024:function:aflac-ops-workbench-cloudtrail-get-event
 
 	                             Event->
