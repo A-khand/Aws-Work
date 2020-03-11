@@ -1,0 +1,25 @@
+const AWS = require('aws-sdk');
+exports.handler = (event,context,callback) => {
+    const cloudtrail = new AWS.CloudTrail();
+    var params = {
+      LookupAttributes: [
+        {
+          AttributeKey:  "EventId",
+          AttributeValue:  event["EventId"]
+        },
+      ]
+    };
+    cloudtrail.lookupEvents(params, function(err, data) {
+         const Data = JSON.parse(JSON.stringify(data));
+      if (err) console.log(err, err.stack);
+      else {   
+        
+        var response = {
+                statusCode: 200,
+                body: Data,
+            };
+        }
+        
+        callback(err,response);
+    });
+};
